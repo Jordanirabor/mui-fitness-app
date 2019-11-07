@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Paper, Typography, TextField } from '@material-ui/core'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+  state = { exercises: [], title: '' }
+
+
+  handleChange = ({ target: { name, value } }) => this.setState({ [name]: value })
+
+
+  render() {
+    const { title } = this.state
+    return (
+      <Paper>
+        <Typography variant='h2' align='center' gutterBottom>
+          Exercises
+       </Typography>
+        <form>
+          <TextField name='title' label='Exercise' value={title} onChange={this.handleChange} margin='normal' />
+        </form>
+      </Paper>
+
+    )
+  }
+
+
 }
-
-export default App;
