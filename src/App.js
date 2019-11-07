@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Paper, Typography, TextField } from '@material-ui/core'
+import { Paper, Typography, TextField, Button } from '@material-ui/core'
 
 export default class App extends Component {
   state = { exercises: [], title: '' }
@@ -17,6 +17,7 @@ export default class App extends Component {
        </Typography>
         <form>
           <TextField name='title' label='Exercise' value={title} onChange={this.handleChange} margin='normal' />
+          <Button type='submit' color='primary' variant="contained"> Create </Button>
         </form>
       </Paper>
 
